@@ -16,12 +16,22 @@ import './style.css';
 
 // --- Slogan aléatoire ---
 (function initSlogan() {
-  const slogans = [
-    "On n'a pas fini de vous chauffer",
-    "Encore un collectif d'allumés",
-    "Y a pas de fumée sans teuf",
-    "Faire teuf de tout bois",
-  ];
+  const slogansByLang = {
+    fr: [
+      "On n'a pas fini de vous chauffer",
+      "Encore un collectif d'allumés",
+      "Y a pas de fumée sans teuf",
+      "Faire teuf de tout bois",
+    ],
+    en: [
+      "We're not done heating you up",
+      "Just another bunch of firestarters",
+      "No smoke without a rave",
+      "Making a party out of anything",
+    ],
+  };
+  const lang = document.documentElement.lang === 'en' ? 'en' : 'fr';
+  const slogans = slogansByLang[lang];
   const el = document.getElementById('slogan');
   if (el) el.textContent = slogans[Math.floor(Math.random() * slogans.length)];
 })();
@@ -117,6 +127,39 @@ function revealPhotoItems(section) {
       const x = e.pageX - track.offsetLeft;
       track.scrollLeft = scrollLeft - (x - startX) * 1.5;
     });
+  });
+})();
+
+// --- Mobile nav plein écran ---
+(function initMobileNav() {
+  const burger = document.getElementById('nav-burger');
+  const mobileNav = document.getElementById('nav-mobile');
+  if (!burger || !mobileNav) return;
+
+  function openNav() {
+    mobileNav.classList.add('is-open');
+    mobileNav.setAttribute('aria-hidden', 'false');
+    burger.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeNav() {
+    mobileNav.classList.remove('is-open');
+    mobileNav.setAttribute('aria-hidden', 'true');
+    burger.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+
+  burger.addEventListener('click', function() {
+    burger.getAttribute('aria-expanded') === 'true' ? closeNav() : openNav();
+  });
+
+  mobileNav.querySelectorAll('.nav-mobile__link').forEach(function(link) {
+    link.addEventListener('click', closeNav);
+  });
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeNav();
   });
 })();
 
