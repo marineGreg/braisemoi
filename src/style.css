@@ -132,7 +132,7 @@ img, video { max-width: 100%; height: auto; display: block; }
   height: 40px;
 }
 .nav__burger:hover { color: #fff; text-shadow: var(--text-shadow-glow-hover); }
-.nav__burger svg { width: 34px; height: 34px; display: block; }
+.nav__burger img { width: 34px; height: 34px; display: block; object-fit: contain; }
 
 /* ============================
    NAV MOBILE PLEIN ÉCRAN
