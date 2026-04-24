@@ -50,6 +50,14 @@ import './style.css';
   ];
   let current = 0;
 
+  // Forcer la lecture sur mobile (iOS/Android bloquent l'autoplay sans interaction)
+  function tryPlay() {
+    video.play().catch(() => {});
+  }
+  tryPlay();
+  document.addEventListener('touchstart', tryPlay, { once: true, passive: true });
+  document.addEventListener('pointerdown', tryPlay, { once: true, passive: true });
+
   video.addEventListener('ended', () => {
     current = (current + 1) % videos.length;
     video.src = videos[current];
