@@ -42,11 +42,19 @@ import './style.css';
   if (!video) return;
 
   const videos = [
+    '/videos/content.mp4',
+    '/videos/toilette.mp4',
+    '/videos/station.mp4',
+    '/videos/concrete.mp4',
+    '/videos/dancefloor.mp4',
+    '/videos/lasers.mp4',
+    '/videos/chinois.mp4',
     '/videos/piedra.mp4',
     '/videos/holbox.mp4',
     '/videos/microclimat.mp4',
     '/videos/pink.mp4',
     '/videos/vryche.mp4',
+    '/videos/facettes.mp4',
   ];
   let current = 0;
 
@@ -186,6 +194,46 @@ import './style.css';
   if (firstActive) {
     revealPhotos(firstActive);
   }
+})();
+
+// --- Bio collapse ---
+(function initBioCollapse() {
+  const isEn = document.documentElement.lang === 'en';
+  const labelMore = isEn ? 'Read more' : 'Lire la suite';
+  const labelLess = isEn ? 'Show less' : 'Réduire';
+
+  document.querySelectorAll('.artiste__bio[data-collapse-from]').forEach(function(bio) {
+    const keyword = bio.dataset.collapseFrom;
+    const paras = Array.from(bio.querySelectorAll('p'));
+
+    // Trouver le premier paragraphe contenant le mot-clé
+    const splitIdx = paras.findIndex(function(p) {
+      return p.textContent.includes(keyword);
+    });
+    if (splitIdx <= 0) return;
+
+    // Envelopper les paragraphes cachés
+    const extra = document.createElement('div');
+    extra.className = 'bio-extra';
+    paras.slice(splitIdx).forEach(function(p) { extra.appendChild(p); });
+    bio.appendChild(extra);
+    extra.hidden = true;
+    bio.classList.add('is-collapsed');
+
+    // Bouton
+    const btn = document.createElement('button');
+    btn.className = 'bio-toggle';
+    btn.textContent = labelMore;
+    bio.insertAdjacentElement('afterend', btn);
+
+    btn.addEventListener('click', function() {
+      const nowHidden = !extra.hidden;
+      extra.hidden = nowHidden;
+      bio.classList.toggle('is-collapsed', nowHidden);
+      btn.textContent = nowHidden ? labelMore : labelLess;
+      btn.classList.toggle('is-open', !nowHidden);
+    });
+  });
 })();
 
 // --- Photo strip drag ---
