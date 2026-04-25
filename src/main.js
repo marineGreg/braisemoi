@@ -66,55 +66,126 @@ import './style.css';
   });
 })();
 
-// --- Scroll animations ---
-(function initScrollAnimations() {
-  const sections = document.querySelectorAll('.artiste');
-  if (!sections.length) return;
+// --- Panels ---
+(function initPanels() {
+  const panelsEl = document.getElementById('panels');
+  const panels = document.querySelectorAll('.panel');
+  if (!panels.length) return;
 
-  function checkVisibility() {
-    const vh = window.innerHeight;
-    sections.forEach(function(section) {
-      if (section.classList.contains('is-visible')) return;
-      const rect = section.getBoundingClientRect();
-      if (rect.top < vh * 0.85 && rect.bottom > 0) {
-        section.classList.add('is-visible');
-        revealPhotoItems(section);
+  const isMobile = () => window.matchMedia('(max-width: 900px)').matches;
+
+  function revealPhotos(panel) {
+    panel.querySelectorAll('.photo-strip__item').forEach(function(item, i) {
+      item.classList.remove('is-revealed');
+      setTimeout(function() { item.classList.add('is-revealed'); }, 900 + i * 100);
+    });
+  }
+
+  function activatePanel(panel) {
+    if (panel.classList.contains('panel--active')) return;
+    panels.forEach(p => p.classList.remove('panel--active'));
+    panel.classList.add('panel--active');
+    revealPhotos(panel);
+  }
+
+  // --- Desktop: click on collapsed panel to expand ---
+  panels.forEach(function(panel) {
+    panel.addEventListener('click', function() {
+      if (!isMobile() && !panel.classList.contains('panel--active')) {
+        activatePanel(panel);
       }
     });
+  });
+
+  // --- Scroll carousel to a panel (mobile) ---
+  function scrollToPanel(panel) {
+    if (!panelsEl) return;
+    const idx = Array.from(panels).indexOf(panel);
+    panelsEl.scrollTo({ left: idx * panelsEl.offsetWidth, behavior: 'smooth' });
   }
 
-  window.addEventListener('scroll', checkVisibility, { passive: true });
-  window.addEventListener('resize', checkVisibility, { passive: true });
-  checkVisibility();
-})();
-
-function revealPhotoItems(section) {
-  section.querySelectorAll('.photo-strip__item').forEach(function(item, i) {
-    setTimeout(function() {
-      item.classList.add('is-revealed');
-    }, 1400 + i * 120);
+  // --- Nav links and hero links with data-panel target ---
+  document.querySelectorAll('[data-panel]').forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      const target = document.getElementById(link.dataset.panel);
+      if (!target) return;
+      e.preventDefault();
+      if (isMobile()) {
+        // 1. Scroll page to panels section
+        panelsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // 2. Then scroll carousel horizontally to the right panel
+        setTimeout(function() { scrollToPanel(target); }, 350);
+      } else {
+        activatePanel(target);
+        panelsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
   });
-}
 
-// --- Watermark parallax ---
-(function initWatermarkParallax() {
-  const watermarks = document.querySelectorAll('.artiste__watermark');
-  if (!watermarks.length) return;
+  // --- Mobile: IntersectionObserver syncs panel--active as user swipes ---
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(function(entries) {
+      if (!isMobile()) return;
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          activatePanel(entry.target);
+          updateDots();
+        }
+      });
+    }, { root: panelsEl, threshold: 0.5 });
 
-  function update() {
-    watermarks.forEach(function(wm, i) {
-      const section = wm.closest('.artiste');
-      const rect = section.getBoundingClientRect();
-      const vh = window.innerHeight;
-      const progress = (vh - rect.top) / (vh + rect.height);
-      const direction = i % 2 === 0 ? 1 : -1;
-      const offset = (progress - 0.5) * 600 * direction;
-      wm.style.transform = `translateX(${offset}px)`;
+    panels.forEach(function(panel) { observer.observe(panel); });
+  }
+
+  // --- Mobile dots navigation ---
+  function buildDots() {
+    if (!panelsEl) return;
+    const existing = document.querySelector('.panels-dots');
+    if (existing) existing.remove();
+
+    const dotsEl = document.createElement('div');
+    dotsEl.className = 'panels-dots';
+
+    panels.forEach(function(panel, i) {
+      const dot = document.createElement('button');
+      dot.className = 'panels-dot' + (panel.classList.contains('panel--active') ? ' panels-dot--active' : '');
+      dot.setAttribute('aria-label', 'Panneau ' + (i + 1));
+      dot.addEventListener('click', function() {
+        panelsEl.scrollTo({ left: i * panelsEl.offsetWidth, behavior: 'smooth' });
+      });
+      dotsEl.appendChild(dot);
+    });
+
+    panelsEl.insertAdjacentElement('afterend', dotsEl);
+  }
+
+  function updateDots() {
+    const dots = document.querySelectorAll('.panels-dot');
+    const activeIdx = Array.from(panels).findIndex(p => p.classList.contains('panel--active'));
+    dots.forEach(function(dot, i) {
+      dot.classList.toggle('panels-dot--active', i === activeIdx);
     });
   }
 
-  window.addEventListener('scroll', update, { passive: true });
-  update();
+  // Build dots only on mobile, rebuild on resize crossing breakpoint
+  let wasMobile = isMobile();
+  if (wasMobile) buildDots();
+
+  window.addEventListener('resize', function() {
+    const nowMobile = isMobile();
+    if (nowMobile && !wasMobile) buildDots();
+    if (!nowMobile && wasMobile) {
+      const dotsEl = document.querySelector('.panels-dots');
+      if (dotsEl) dotsEl.remove();
+    }
+    wasMobile = nowMobile;
+  });
+
+  // --- Reveal photos in the first active panel on load ---
+  const firstActive = document.querySelector('.panel--active');
+  if (firstActive) {
+    revealPhotos(firstActive);
+  }
 })();
 
 // --- Photo strip drag ---

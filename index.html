@@ -17,9 +17,9 @@
   <nav class="nav" id="main-nav">
     <a href="#top" class="nav__logo">Braise-Moi</a>
     <div class="nav__links">
-      <a href="#subtherapy" class="nav__link">Sub Therapy</a>
-      <a href="#content" class="nav__link">C O N T E N T</a>
-      <a href="#modestie" class="nav__link">Modestie</a>
+      <a href="#panels" class="nav__link" data-panel="panel-subtherapy">Sub Therapy</a>
+      <a href="#panels" class="nav__link" data-panel="panel-content">C O N T E N T</a>
+      <a href="#panels" class="nav__link" data-panel="panel-modestie">Modestie</a>
     </div>
     <button class="nav__burger" id="nav-burger" aria-label="Menu" aria-expanded="false">
       <img src="/images/etincelle.png" alt="" aria-hidden="true" />
@@ -29,9 +29,9 @@
   <!-- Mobile nav plein écran -->
   <div class="nav-mobile" id="nav-mobile" aria-hidden="true">
     <nav class="nav-mobile__inner" aria-label="Navigation">
-      <a href="#subtherapy" class="nav-mobile__link">Sub Therapy</a>
-      <a href="#content" class="nav-mobile__link">C O N T E N T</a>
-      <a href="#modestie" class="nav-mobile__link">Modestie</a>
+      <a href="#panels" class="nav-mobile__link" data-panel="panel-subtherapy">Sub Therapy</a>
+      <a href="#panels" class="nav-mobile__link" data-panel="panel-content">C O N T E N T</a>
+      <a href="#panels" class="nav-mobile__link" data-panel="panel-modestie">Modestie</a>
     </nav>
   </div>
 
@@ -47,208 +47,238 @@
       <h1 class="hero__title">BRAISE-MOI</h1>
       <p class="hero__slogan" id="slogan"></p>
       <nav class="hero__nav" aria-label="Artistes">
-        <a href="#subtherapy" class="hero__nav-link">Sub Therapy</a>
-        <a href="#content" class="hero__nav-link">C O N T E N T</a>
-        <a href="#modestie" class="hero__nav-link">Modestie</a>
+        <a href="#panels" class="hero__nav-link" data-panel="panel-subtherapy">Sub Therapy</a>
+        <a href="#panels" class="hero__nav-link" data-panel="panel-content">C O N T E N T</a>
+        <a href="#panels" class="hero__nav-link" data-panel="panel-modestie">Modestie</a>
       </nav>
     </div>
     <div class="hero__scroll-hint" class="hero__scroll"><span></span></div>
   </section>
 
-  <!-- SUB THERAPY -->
-  <section class="artiste artiste--slide-left" id="subtherapy">
-    <div class="artiste__watermark" aria-hidden="true">Sub Therapy</div>
-    <div class="artiste__layout">
-      <div class="artiste__visual">
-        <div class="artiste__image-wrap">
-          <img src="/images/amber/amber-station-90.webp" alt="Sub Therapy" class="artiste__image" loading="lazy" />
-          <div class="artiste__image-accent"></div>
-        </div>
-      </div>
-      <div class="artiste__content">
-        <div class="artiste__meta">
-          <h2 class="artiste__name">Sub Therapy</h2>
-          <div class="social">
-            <a href="https://soundcloud.com/sub_therapy" class="social__link" target="_blank" rel="noopener" aria-label="SoundCloud">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.999 14.165c-.052 1.796-1.612 3.169-3.4 3.169h-8.18a.68.68 0 0 1-.675-.683V7.862a.747.747 0 0 1 .452-.724s.75-.513 2.333-.513a5.364 5.364 0 0 1 2.763.755 5.433 5.433 0 0 1 2.57 3.54c.282-.08.574-.121.868-.12.884 0 1.73.358 2.347.992s.948 1.49.922 2.373ZM10.721 8.421c.247 2.98.427 5.697 0 8.672a.264.264 0 0 1-.53 0c-.395-2.946-.22-5.718 0-8.672a.264.264 0 0 1 .53 0ZM9.072 9.448c.285 2.659.37 4.986-.006 7.655a.277.277 0 0 1-.55 0c-.331-2.63-.256-5.02 0-7.655a.277.277 0 0 1 .556 0Zm-1.663-.257c.27 2.726.39 5.171 0 7.904a.266.266 0 0 1-.532 0c-.38-2.69-.257-5.21 0-7.904a.266.266 0 0 1 .532 0Zm-1.647.77a26.108 26.108 0 0 1-.008 7.147a.272.272 0 0 1-.542 0a27.955 27.955 0 0 1 0-7.147a.275.275 0 0 1 .55 0Zm-1.67 1.769c.421 1.865.228 3.5-.029 5.388a.257.257 0 0 1-.514 0c-.21-1.858-.398-3.549 0-5.389a.272.272 0 0 1 .543 0Zm-1.655-.273c.388 1.897.26 3.508-.01 5.412-.026.28-.514.283-.54 0-.244-1.878-.347-3.54-.01-5.412a.283.283 0 0 1 .56 0Zm-1.668.911c.4 1.268.257 2.292-.026 3.572a.257.257 0 0 1-.514 0c-.241-1.262-.354-2.312-.023-3.572a.283.283 0 0 1 .563 0Z"/></svg>
-            </a>
-            <a href="https://www.facebook.com/sub.therapy.amber/" class="social__link" target="_blank" rel="noopener" aria-label="Facebook">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-            </a>
-            <a href="https://instagram.com/sub.therapy/" class="social__link" target="_blank" rel="noopener" aria-label="Instagram">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-            </a>
-            <a href="mailto:collectifbraisemoi@gmail.com" class="social__booking">Booking</a>
-          </div>
-        </div>
-        <div class="artiste__bio">
-          <p>Sub Therapy envisage la musique électronique comme un espace d’expérience sensorielle partagée, dépassant la simple sélection de morceaux pour créer des voyages immersifs et évolutifs.</p>
-          <p>Ses sets, qu’ils soient destinés au club ou à l’ambiant, sont guidés par une intention commune : aligner le corps et l’écoute. La vitesse n’est jamais une fin en soi. La danse peut être à la fois physique et introspective, tournée vers le dancefloor autant que vers un paysage intérieur. Au fil du temps, une dynamique collective émerge, un terrain commun façonné par l’attention, la présence et la connexion.</p>
-          <p>Enraciné dans la culture club sans pour autant en reproduire la rudesse attendue, le son de Sub Therapy possède une qualité organique distincte. Les textures synthétiques s’ouvrent sur des espaces de respiration, des étendues mélodiques et des rythmes changeants. Les genres y sont traités comme des seuils plutôt que comme des identités fixes, permettant un mouvement fluide entre des territoires profonds, hypnotiques et atmosphériques.</p>
-          <p>Refusant les effets faciles et les montées prévisibles, elle laisse les morceaux se déployer pleinement, les abordant avec retenue et précision. La technique est au service de l’écoute, et jamais l’inverse. Ses sets se construisent moins sur l’impact que sur la progression, une réponse continue à ce que la musique révèle.</p>
-          <p>Dans les contextes ambiant, le temps s’étire et s’approfondit, l’accent étant mis sur le détail, la texture et la subtilité de la perception. Dans les environnements plus rythmés, l’énergie reste maîtrisée et fluide, permettant aux corps de se mouvoir librement, sans excès.</p>
-          <p>La frontière entre guide et guidé se dissout. La foule influence la direction autant qu’elle-même, créant une boucle de rétroaction où le mouvement, l’attention et l’émotion façonnent l’expérience.</p>
-          <p>L’approche de Sub Therapy se tourne vers un futur ouvert, créant des espaces où la musique n’est pas une échappatoire, mais une forme de présence : collective, immersive et transformatrice.</p>
-        </div>
-        <div class="artiste__tracks">
-          <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" loading="lazy" 
-            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2017371425&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true"></iframe>
-            <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" loading="lazy"
-            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A1814906175&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true"></iframe>
-        </div>
-      </div>
-    </div>
-    <div class="artiste__photos">
-      <div class="photo-strip__track">
-        <button class="photo-strip__item" data-src="/images/amber/amber-media-station-jk.webp" data-alt="Sub Therapy danse">
-          <img src="/images/amber/amber-media-station-jk.webp" alt="Sub Therapy danse" loading="lazy" />
-        </button>
-        <button class="photo-strip__item" data-src="/images/amber/amber-media-station.webp" data-alt="Sub Therapy dj set">
-          <img src="/images/amber/amber-media-station.webp" alt="Sub Therapy dj set" loading="lazy" />
-        </button>
-        <button class="photo-strip__item" data-src="/images/amber/amber-karma.webp" data-alt="Sub Therapy karma">
-          <img src="/images/amber/amber-karma.webp" alt="Sub Therapy karma" loading="lazy" />
-        </button>
-        <button class="photo-strip__item" data-src="/images/amber/amber-media-station-danse.webp" data-alt="Sub Therapy dj danse">
-          <img src="/images/amber/amber-media-station-danse.webp" alt="Sub Therapy dj danse" loading="lazy" />
-        </button>
-        <button class="photo-strip__item photo-strip__item--wide" data-src="/images/amber/amber-station-soustesreins.webp" data-alt="Sub Therapy dj">
-          <img src="/images/amber/amber-station-soustesreins.webp" alt="Sub Therapy dj" loading="lazy" />
-        </button>
-      </div>
-    </div>
-  </section>
+  <!-- PANELS -->
+  <div class="panels" id="panels">
 
-  <!-- C O N T E N T -->
-  <section class="artiste artiste--zoom-in" id="content">
-    <div class="artiste__watermark" aria-hidden="true">C O N T E N T</div>
-    <div class="artiste__layout">
-      <div class="artiste__visual">
-        <div class="artiste__image-wrap">
-          <img src="/images/content/content-bio.webp" alt="Le duo C O N T E N T" class="artiste__image" loading="lazy" />
-          <div class="artiste__image-accent"></div>
-        </div>
-      </div>
-      <div class="artiste__content">
-        <div class="artiste__meta">
-          <h2 class="artiste__name">C O N T E N T</h2>
-          <p class="artiste__catchphrase">Pas de repos quand on est synchro</p>
-          <div class="social">
-            <a href="https://soundcloud.com/onestcontent/" class="social__link" target="_blank" rel="noopener" aria-label="SoundCloud">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.999 14.165c-.052 1.796-1.612 3.169-3.4 3.169h-8.18a.68.68 0 0 1-.675-.683V7.862a.747.747 0 0 1 .452-.724s.75-.513 2.333-.513a5.364 5.364 0 0 1 2.763.755 5.433 5.433 0 0 1 2.57 3.54c.282-.08.574-.121.868-.12.884 0 1.73.358 2.347.992s.948 1.49.922 2.373ZM10.721 8.421c.247 2.98.427 5.697 0 8.672a.264.264 0 0 1-.53 0c-.395-2.946-.22-5.718 0-8.672a.264.264 0 0 1 .53 0ZM9.072 9.448c.285 2.659.37 4.986-.006 7.655a.277.277 0 0 1-.55 0c-.331-2.63-.256-5.02 0-7.655a.277.277 0 0 1 .556 0Zm-1.663-.257c.27 2.726.39 5.171 0 7.904a.266.266 0 0 1-.532 0c-.38-2.69-.257-5.21 0-7.904a.266.266 0 0 1 .532 0Zm-1.647.77a26.108 26.108 0 0 1-.008 7.147a.272.272 0 0 1-.542 0a27.955 27.955 0 0 1 0-7.147a.275.275 0 0 1 .55 0Zm-1.67 1.769c.421 1.865.228 3.5-.029 5.388a.257.257 0 0 1-.514 0c-.21-1.858-.398-3.549 0-5.389a.272.272 0 0 1 .543 0Zm-1.655-.273c.388 1.897.26 3.508-.01 5.412-.026.28-.514.283-.54 0-.244-1.878-.347-3.54-.01-5.412a.283.283 0 0 1 .56 0Zm-1.668.911c.4 1.268.257 2.292-.026 3.572a.257.257 0 0 1-.514 0c-.241-1.262-.354-2.312-.023-3.572a.283.283 0 0 1 .563 0Z"/></svg>
-            </a>
-            <a href="https://www.facebook.com/amberetmodestie/" class="social__link" target="_blank" rel="noopener" aria-label="Facebook">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-            </a>
-            <a href="https://instagram.com/c.o.n.t.e.n.t/" class="social__link" target="_blank" rel="noopener" aria-label="Instagram">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-            </a>
-            <a href="mailto:collectifbraisemoi@gmail.com" class="social__booking">Booking</a>
+    <!-- PANEL: Sub Therapy -->
+    <div class="panel panel--active" id="panel-subtherapy">
+      <div class="panel__bg" style="background-image: url(‘/images/subtherapy/subtherapy-station-90.webp’)"></div>
+      <div class="panel__tab" aria-hidden="true"><span>Sub Therapy</span></div>
+      <div class="panel__body">
+        <section class="artiste artiste--slide-left" id="subtherapy">
+          <div class="artiste__watermark" aria-hidden="true">Sub Therapy</div>
+          <div class="artiste__layout">
+            <div class="artiste__visual">
+              <div class="artiste__image-wrap">
+                <img src="/images/subtherapy/subtherapy-station-90.webp" alt="Sub Therapy" class="artiste__image" loading="lazy" />
+                <div class="artiste__image-accent"></div>
+              </div>
+            </div>
+            <div class="artiste__content">
+              <div class="artiste__meta">
+                <h2 class="artiste__name">Sub Therapy</h2>
+                <div class="social">
+                  <a href="https://soundcloud.com/sub_therapy" class="social__link" target="_blank" rel="noopener" aria-label="SoundCloud">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.999 14.165c-.052 1.796-1.612 3.169-3.4 3.169h-8.18a.68.68 0 0 1-.675-.683V7.862a.747.747 0 0 1 .452-.724s.75-.513 2.333-.513a5.364 5.364 0 0 1 2.763.755 5.433 5.433 0 0 1 2.57 3.54c.282-.08.574-.121.868-.12.884 0 1.73.358 2.347.992s.948 1.49.922 2.373ZM10.721 8.421c.247 2.98.427 5.697 0 8.672a.264.264 0 0 1-.53 0c-.395-2.946-.22-5.718 0-8.672a.264.264 0 0 1 .53 0ZM9.072 9.448c.285 2.659.37 4.986-.006 7.655a.277.277 0 0 1-.55 0c-.331-2.63-.256-5.02 0-7.655a.277.277 0 0 1 .556 0Zm-1.663-.257c.27 2.726.39 5.171 0 7.904a.266.266 0 0 1-.532 0c-.38-2.69-.257-5.21 0-7.904a.266.266 0 0 1 .532 0Zm-1.647.77a26.108 26.108 0 0 1-.008 7.147a.272.272 0 0 1-.542 0a27.955 27.955 0 0 1 0-7.147a.275.275 0 0 1 .55 0Zm-1.67 1.769c.421 1.865.228 3.5-.029 5.388a.257.257 0 0 1-.514 0c-.21-1.858-.398-3.549 0-5.389a.272.272 0 0 1 .543 0Zm-1.655-.273c.388 1.897.26 3.508-.01 5.412-.026.28-.514.283-.54 0-.244-1.878-.347-3.54-.01-5.412a.283.283 0 0 1 .56 0Zm-1.668.911c.4 1.268.257 2.292-.026 3.572a.257.257 0 0 1-.514 0c-.241-1.262-.354-2.312-.023-3.572a.283.283 0 0 1 .563 0Z"/></svg>
+                  </a>
+                  <a href="https://www.facebook.com/sub.therapy.amber/" class="social__link" target="_blank" rel="noopener" aria-label="Facebook">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                  </a>
+                  <a href="https://instagram.com/sub.therapy/" class="social__link" target="_blank" rel="noopener" aria-label="Instagram">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                  </a>
+                  <a href="mailto:collectifbraisemoi@gmail.com" class="social__booking">Booking</a>
+                </div>
+              </div>
+              <div class="artiste__bio">
+                <p>Sub Therapy est une DJ basée à Paris, reconnue pour ses sets immersifs et émotionnels, à la croisée de l’IDM, de la trance et de la dub techno.</p>
+                <p>Son approche repose sur la progression et la sensation plutôt que sur l’impact immédiat. Elle construit des trajectoires où les morceaux respirent, évoluent et dialoguent entre eux, créant une tension organique qui se déploie dans le temps. Entre lâcher-prise et sensualité, ses sets invitent autant à danser qu’à ressentir.</p>
+                <p>À l’aise aussi bien en club qu’en ambient, Sub Therapy explore différentes temporalités. Ses sets oscillent entre 90 et 145 BPM, du downtempo introspectif aux montées trance plus intenses. Elle navigue avec fluidité entre warm-up, peak time et closing, adaptant son énergie sans jamais perdre en cohérence.</p>
+                <p>Habituée des scènes parisiennes, elle a joué dans des lieux comme le Cabaret Sauvage, La Station – Gare des Mines, le Badaboum, le Glazart ou encore le Sample, ainsi que pour des collectifs tels que Nipples, Alter Paname, Microclimat, La Toilette, Positive Altitude ou Sous Tes Reins.</p>
+                <p>Toujours attentive au dancefloor, elle cultive l’art du moment inattendu : une track oubliée, un classique détourné ou un choix audacieux placé au moment juste. De ces ruptures naissent souvent les instants les plus marquants, capables de fédérer un public entier et de transformer un closing en souvenir collectif.</p>
+                <p>Sub Therapy développe une signature sonore à la fois précise et instinctive, où la musique devient un terrain de partage, de tension et de plaisir collectif.</p>
+              </div>
+              <div class="artiste__tracks">
+                <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" loading="lazy"
+                  src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2017371425&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true"></iframe>
+                <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" loading="lazy"
+                  src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A1814906175&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true"></iframe>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="artiste__bio">
-          <p>En duo dans la vie comme derrière les platines, <a href="#subtherapy">Sub Therapy</a> et <a href="#modestie">Modestie</a> sont CONTENT.</p>
-          <p>Sillonnant les dancefloors de Paris depuis près d'une décennie, leur sensibilité et sens du public fusionnent au gré d'une sélection léchée. Énergie contagieuse et regards espiègles. Laissez l'alchimie opérer quelques heures pour obtenir l'effet escompté.</p>
-          <p>Qu'ils soient lion ou libra, les cages s'ouvrent, les visages s'éclairent et les t-shirts tombent parfois… Souvent.</p>
-          <p>Les scènes qui s'y sont frottées s'en souviennent encore. De La Station à Concrete, des stages de l'Alter Paname, à ceux de la Nipples, Roue Libre ou Microclimat, la magie n'a pas cessé ces dernières années. Et même les scorpions se sont levés…</p>
-          <p>Alors, c'est de fêtes privées en raves pour initiés qu'ils ont opéré avec des sets qui défient l'horloge contemporaine. Pas de pudeur, que de l'amour à donner, nos Mickey et Mallory Knox à nous.</p>
-          <p>Inaltérables kiffeurs nés taillés pour dancefloor trance-figuré.</p>
-        </div>
-        <div class="artiste__tracks">
-          <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" loading="lazy"
-            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A1919294933&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true"></iframe>
-        </div>
+          <div class="artiste__photos">
+            <div class="photo-strip__track">
+              <button class="photo-strip__item" data-src="/images/subtherapy/subtherapy-station-str.webp" data-alt="Sub Therapy dj set">
+                <img src="/images/subtherapy/subtherapy-station-str.webp" alt="Sub Therapy dj set" loading="lazy" />
+              </button>
+              <button class="photo-strip__item" data-src="/images/subtherapy/subtherapy-inner.webp" data-alt="Sub Therapy">
+                <img src="/images/subtherapy/subtherapy-inner.webp" alt="Sub Therapy" loading="lazy" />
+              </button>
+              <button class="photo-strip__item" data-src="/images/subtherapy/subtherapy-station-danse.webp" data-alt="Sub Therapy danse">
+                <img src="/images/subtherapy/subtherapy-station-danse.webp" alt="Sub Therapy danse" loading="lazy" />
+              </button>
+              <button class="photo-strip__item photo-strip__item--wide" data-src="/images/subtherapy/subtherapy-party.webp" data-alt="Sub Therapy">
+                <img src="/images/subtherapy/subtherapy-party.webp" alt="Sub Therapy" loading="lazy" />
+              </button>
+              <button class="photo-strip__item" data-src="/images/subtherapy/subtherapy-karma.webp" data-alt="Sub Therapy Karma">
+                <img src="/images/subtherapy/subtherapy-karma.webp" alt="Sub Therapy Karma" loading="lazy" />
+              </button>
+            </div>
+          </div>
+        </section>
       </div>
     </div>
-    <div class="artiste__photos">
-      <div class="photo-strip__track">
-        <button class="photo-strip__item" data-src="/images/content/content-karma-romain-guede.webp" data-alt="CONTENT Karma">
-          <img src="/images/content/content-karma-romain-guede.webp" alt="CONTENT Karma" loading="lazy" />
-        </button>
-        <button class="photo-strip__item" data-src="/images/content/content-puces.webp" data-alt="CONTENT photo">
-          <img src="/images/content/content-puces.webp" alt="CONTENT photo" loading="lazy" />
-        </button>
-        <button class="photo-strip__item" data-src="/images/content/content-ciel.webp" data-alt="CONTENT Ciel Aubervilliers">
-          <img src="/images/content/content-ciel.webp" alt="CONTENT Ciel Aubervilliers" loading="lazy" />
-        </button>
-        <button class="photo-strip__item" data-src="/images/content/content-vryche-stage.webp" data-alt="CONTENT Vryche festival">
-          <img src="/images/content/content-vryche-stage.webp" alt="CONTENT Vryche festival" loading="lazy" />
-        </button>
-        <button class="photo-strip__item" data-src="/images/content/content-bobigny.webp" data-alt="CONTENT Bobigny">
-          <img src="/images/content/content-bobigny.webp" alt="CONTENT Bobigny" loading="lazy" />
-        </button>
-        <button class="photo-strip__item" data-src="/images/content/content-vryche.webp" data-alt="CONTENT Vryche">
-          <img src="/images/content/content-vryche.webp" alt="CONTENT Vryche" loading="lazy" />
-        </button>
-      </div>
-    </div>
-  </section>
 
-  <!-- MODESTIE -->
-  <section class="artiste artiste--slide-right" id="modestie">
-    <div class="artiste__watermark" aria-hidden="true">Modestie</div>
-    <div class="artiste__layout">
-      <div class="artiste__visual">
-        <div class="artiste__image-wrap">
-          <img src="/images/modestie/modestie-book.webp" alt="Modestie DJ" class="artiste__image" loading="lazy" />
-          <div class="artiste__image-accent"></div>
-        </div>
-      </div>
-      <div class="artiste__content">
-        <div class="artiste__meta">
-          <h2 class="artiste__name">Modestie</h2>
-          <div class="social">
-            <a href="https://soundcloud.com/modestie/" class="social__link" target="_blank" rel="noopener" aria-label="SoundCloud">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.999 14.165c-.052 1.796-1.612 3.169-3.4 3.169h-8.18a.68.68 0 0 1-.675-.683V7.862a.747.747 0 0 1 .452-.724s.75-.513 2.333-.513a5.364 5.364 0 0 1 2.763.755 5.433 5.433 0 0 1 2.57 3.54c.282-.08.574-.121.868-.12.884 0 1.73.358 2.347.992s.948 1.49.922 2.373ZM10.721 8.421c.247 2.98.427 5.697 0 8.672a.264.264 0 0 1-.53 0c-.395-2.946-.22-5.718 0-8.672a.264.264 0 0 1 .53 0ZM9.072 9.448c.285 2.659.37 4.986-.006 7.655a.277.277 0 0 1-.55 0c-.331-2.63-.256-5.02 0-7.655a.277.277 0 0 1 .556 0Zm-1.663-.257c.27 2.726.39 5.171 0 7.904a.266.266 0 0 1-.532 0c-.38-2.69-.257-5.21 0-7.904a.266.266 0 0 1 .532 0Zm-1.647.77a26.108 26.108 0 0 1-.008 7.147a.272.272 0 0 1-.542 0a27.955 27.955 0 0 1 0-7.147a.275.275 0 0 1 .55 0Zm-1.67 1.769c.421 1.865.228 3.5-.029 5.388a.257.257 0 0 1-.514 0c-.21-1.858-.398-3.549 0-5.389a.272.272 0 0 1 .543 0Zm-1.655-.273c.388 1.897.26 3.508-.01 5.412-.026.28-.514.283-.54 0-.244-1.878-.347-3.54-.01-5.412a.283.283 0 0 1 .56 0Zm-1.668.911c.4 1.268.257 2.292-.026 3.572a.257.257 0 0 1-.514 0c-.241-1.262-.354-2.312-.023-3.572a.283.283 0 0 1 .563 0Z"/></svg>
-            </a>
-            <a href="https://www.facebook.com/modestie0/" class="social__link" target="_blank" rel="noopener" aria-label="Facebook">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-            </a>
-            <a href="https://instagram.com/theodore_modestie/" class="social__link" target="_blank" rel="noopener" aria-label="Instagram">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-            </a>
-            <a href="https://open.spotify.com/intl-fr/artist/0OTOVBdbPpo0bKBKWfUXkT" class="social__link" target="_blank" rel="noopener" aria-label="Spotify">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
-            </a>
-            <a href="https://modestie.bandcamp.com/" class="social__link" target="_blank" rel="noopener" aria-label="Bandcamp">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M0 18.75l7.437-13.5H24l-7.438 13.5z"/></svg>
-            </a>
-            <a href="mailto:collectifbraisemoi@gmail.com" class="social__booking">Booking</a>
+    <!-- PANEL: C O N T E N T -->
+    <div class="panel" id="panel-content">
+      <div class="panel__bg" style="background-image: url(‘/images/content/content-bio.webp’)"></div>
+      <div class="panel__tab" aria-hidden="true"><span>C O N T E N T</span></div>
+      <div class="panel__body">
+        <section class="artiste artiste--zoom-in" id="content">
+          <div class="artiste__watermark" aria-hidden="true">C O N T E N T</div>
+          <div class="artiste__layout">
+            <div class="artiste__visual">
+              <div class="artiste__image-wrap">
+                <img src="/images/content/content-bio.webp" alt="Le duo C O N T E N T" class="artiste__image" loading="lazy" />
+                <div class="artiste__image-accent"></div>
+              </div>
+            </div>
+            <div class="artiste__content">
+              <div class="artiste__meta">
+                <h2 class="artiste__name">C O N T E N T</h2>
+                <div class="social">
+                  <a href="https://soundcloud.com/onestcontent/" class="social__link" target="_blank" rel="noopener" aria-label="SoundCloud">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.999 14.165c-.052 1.796-1.612 3.169-3.4 3.169h-8.18a.68.68 0 0 1-.675-.683V7.862a.747.747 0 0 1 .452-.724s.75-.513 2.333-.513a5.364 5.364 0 0 1 2.763.755 5.433 5.433 0 0 1 2.57 3.54c.282-.08.574-.121.868-.12.884 0 1.73.358 2.347.992s.948 1.49.922 2.373ZM10.721 8.421c.247 2.98.427 5.697 0 8.672a.264.264 0 0 1-.53 0c-.395-2.946-.22-5.718 0-8.672a.264.264 0 0 1 .53 0ZM9.072 9.448c.285 2.659.37 4.986-.006 7.655a.277.277 0 0 1-.55 0c-.331-2.63-.256-5.02 0-7.655a.277.277 0 0 1 .556 0Zm-1.663-.257c.27 2.726.39 5.171 0 7.904a.266.266 0 0 1-.532 0c-.38-2.69-.257-5.21 0-7.904a.266.266 0 0 1 .532 0Zm-1.647.77a26.108 26.108 0 0 1-.008 7.147a.272.272 0 0 1-.542 0a27.955 27.955 0 0 1 0-7.147a.275.275 0 0 1 .55 0Zm-1.67 1.769c.421 1.865.228 3.5-.029 5.388a.257.257 0 0 1-.514 0c-.21-1.858-.398-3.549 0-5.389a.272.272 0 0 1 .543 0Zm-1.655-.273c.388 1.897.26 3.508-.01 5.412-.026.28-.514.283-.54 0-.244-1.878-.347-3.54-.01-5.412a.283.283 0 0 1 .56 0Zm-1.668.911c.4 1.268.257 2.292-.026 3.572a.257.257 0 0 1-.514 0c-.241-1.262-.354-2.312-.023-3.572a.283.283 0 0 1 .563 0Z"/></svg>
+                  </a>
+                  <a href="https://www.facebook.com/amberetmodestie/" class="social__link" target="_blank" rel="noopener" aria-label="Facebook">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                  </a>
+                  <a href="https://instagram.com/c.o.n.t.e.n.t/" class="social__link" target="_blank" rel="noopener" aria-label="Instagram">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                  </a>
+                  <a href="mailto:collectifbraisemoi@gmail.com" class="social__booking">Booking</a>
+                </div>
+              </div>
+              <div class="artiste__bio">
+                <p>En duo dans la vie comme derrière les platines, <a href="#subtherapy">Sub Therapy</a> et <a href="#modestie">Modestie</a> sont CONTENT.</p>
+                <p>Sillonnant les dancefloors de Paris depuis près d’une décennie, leur sensibilité et sens du public fusionnent au gré d’une sélection léchée. Énergie contagieuse et regards espiègles. Laissez l’alchimie opérer quelques heures pour obtenir l’effet escompté.</p>
+                <p>Qu’ils soient lion ou libra, les cages s’ouvrent, les visages s’éclairent et les t-shirts tombent parfois… Souvent.</p>
+                <p>Les scènes qui s’y sont frottées s’en souviennent encore. De La Station à Concrete, des stages de l’Alter Paname, à ceux de la Nipples, Roue Libre ou Microclimat, la magie n’a pas cessé ces dernières années. Et même les scorpions se sont levés…</p>
+                <p>Alors, c’est de fêtes privées en raves pour initiés qu’ils ont opéré avec des sets qui défient l’horloge contemporaine. Pas de pudeur, que de l’amour à donner, nos Mickey et Mallory Knox à nous.</p>
+                <p>Inaltérables kiffeurs nés taillés pour dancefloor trance-figuré.</p>
+              </div>
+              <div class="artiste__tracks">
+                <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" loading="lazy"
+                  src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A1919294933&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true"></iframe>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="artiste__bio">
-          <p>Après avoir mixé sur la grande muraille de Chine lors du YinYang Festival, Modestie rentre en France déterminé à digger et prendre le sujet plus au sérieux.</p>
-          <p>Utilisant d'abord les quelques vinyles récoltés pendant ses voyages, il agrandit ensuite sa collection, influencé par le label <em>KOMPAKT</em> pour lequel il a un véritable coup de cœur, et s'approprie des pépites solaires au gré de ses écoutes dans les shops.</p>
-          <p>Il fait ses armes à Paris en résidant au Garage, en jouant à Concrete, et en ridant les decks des collectifs parisiens les plus underground comme Péripate, Nipples, Microclimat, La Toilette, ou encore Positive Altitude. C'est pendant certains de ces événements qu'il forme avec <a href="#subtherapy">Sub Therapy</a> le duo <a href="#content">C&nbsp;O&nbsp;N&nbsp;T&nbsp;E&nbsp;N&nbsp;T</a>.</p>
-          <p>L'arrêt brutal de la vie nocturne en 2020 l'amène à découvrir et en apprendre davantage sur la musique électronique puisqu'il entreprend de fouiller des discographies datant des années 80 et 90&nbsp;: New Beat, Techno, parfois trancy, ou encore ambient. Une infinité de styles qu'il parcourt pour peaufiner ses playlists et faire vibrer les dancefloors, qu'ils soient moites, décomplexés ou plus posés.</p>
-        </div>
-        <div class="artiste__tracks">
-          <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" loading="lazy"
-            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2198140871&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true"></iframe>
-          <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" loading="lazy"
-            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2198149431&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true"></iframe>
-          <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" loading="lazy"
-            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A1468041517&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true"></iframe>
+          <div class="artiste__photos">
+            <div class="photo-strip__track">
+              <button class="photo-strip__item" data-src="/images/content/content-karma-romain-guede.webp" data-alt="CONTENT Karma">
+                <img src="/images/content/content-karma-romain-guede.webp" alt="CONTENT Karma" loading="lazy" />
+              </button>
+              <button class="photo-strip__item" data-src="/images/content/content-puces.webp" data-alt="CONTENT photo">
+                <img src="/images/content/content-puces.webp" alt="CONTENT photo" loading="lazy" />
+              </button>
+              <button class="photo-strip__item" data-src="/images/content/content-ciel.webp" data-alt="CONTENT Ciel Aubervilliers">
+                <img src="/images/content/content-ciel.webp" alt="CONTENT Ciel Aubervilliers" loading="lazy" />
+              </button>
+              <button class="photo-strip__item" data-src="/images/content/content-vryche-stage.webp" data-alt="CONTENT Vryche festival">
+                <img src="/images/content/content-vryche-stage.webp" alt="CONTENT Vryche festival" loading="lazy" />
+              </button>
+              <button class="photo-strip__item" data-src="/images/content/content-bobigny.webp" data-alt="CONTENT Bobigny">
+                <img src="/images/content/content-bobigny.webp" alt="CONTENT Bobigny" loading="lazy" />
+              </button>
+              <button class="photo-strip__item" data-src="/images/content/content-vryche.webp" data-alt="CONTENT Vryche">
+                <img src="/images/content/content-vryche.webp" alt="CONTENT Vryche" loading="lazy" />
+              </button>
+            </div>
           </div>
+        </section>
       </div>
     </div>
-    <div class="artiste__photos">
-      <div class="photo-strip__track">
-        <button class="photo-strip__item" data-src="/images/modestie/modestie-garage.webp" data-alt="Modestie Garage">
-          <img src="/images/modestie/modestie-garage.webp" alt="Modestie Garage" loading="lazy" />
-        </button>
-        <button class="photo-strip__item" data-src="/images/modestie/modestie-nb1-min.webp" data-alt="Modestie Concrete">
-          <img src="/images/modestie/modestie-nb1-min.webp" alt="Modestie Concrete" loading="lazy" />
-        </button>
-        <button class="photo-strip__item" data-src="/images/modestie/modestie-nb-min.webp" data-alt="Modestie">
-          <img src="/images/modestie/modestie-nb-min.webp" alt="Modestie" loading="lazy" />
-        </button>
-        <button class="photo-strip__item photo-strip__item--wide" data-src="/images/modestie/modestie-vryche.webp" data-alt="Modestie Vryche festival">
-          <img src="/images/modestie/modestie-vryche.webp" alt="Modestie Vryche festival" loading="lazy" />
-        </button>
+
+    <!-- PANEL: Modestie -->
+    <div class="panel" id="panel-modestie">
+      <div class="panel__bg" style="background-image: url(‘/images/modestie/modestie-book.webp’)"></div>
+      <div class="panel__tab" aria-hidden="true"><span>Modestie</span></div>
+      <div class="panel__body">
+        <section class="artiste artiste--slide-right" id="modestie">
+          <div class="artiste__watermark" aria-hidden="true">Modestie</div>
+          <div class="artiste__layout">
+            <div class="artiste__visual">
+              <div class="artiste__image-wrap">
+                <img src="/images/modestie/modestie-book.webp" alt="Modestie DJ" class="artiste__image" loading="lazy" />
+                <div class="artiste__image-accent"></div>
+              </div>
+            </div>
+            <div class="artiste__content">
+              <div class="artiste__meta">
+                <h2 class="artiste__name">Modestie</h2>
+                <div class="social">
+                  <a href="https://soundcloud.com/modestie/" class="social__link" target="_blank" rel="noopener" aria-label="SoundCloud">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.999 14.165c-.052 1.796-1.612 3.169-3.4 3.169h-8.18a.68.68 0 0 1-.675-.683V7.862a.747.747 0 0 1 .452-.724s.75-.513 2.333-.513a5.364 5.364 0 0 1 2.763.755 5.433 5.433 0 0 1 2.57 3.54c.282-.08.574-.121.868-.12.884 0 1.73.358 2.347.992s.948 1.49.922 2.373ZM10.721 8.421c.247 2.98.427 5.697 0 8.672a.264.264 0 0 1-.53 0c-.395-2.946-.22-5.718 0-8.672a.264.264 0 0 1 .53 0ZM9.072 9.448c.285 2.659.37 4.986-.006 7.655a.277.277 0 0 1-.55 0c-.331-2.63-.256-5.02 0-7.655a.277.277 0 0 1 .556 0Zm-1.663-.257c.27 2.726.39 5.171 0 7.904a.266.266 0 0 1-.532 0c-.38-2.69-.257-5.21 0-7.904a.266.266 0 0 1 .532 0Zm-1.647.77a26.108 26.108 0 0 1-.008 7.147a.272.272 0 0 1-.542 0a27.955 27.955 0 0 1 0-7.147a.275.275 0 0 1 .55 0Zm-1.67 1.769c.421 1.865.228 3.5-.029 5.388a.257.257 0 0 1-.514 0c-.21-1.858-.398-3.549 0-5.389a.272.272 0 0 1 .543 0Zm-1.655-.273c.388 1.897.26 3.508-.01 5.412-.026.28-.514.283-.54 0-.244-1.878-.347-3.54-.01-5.412a.283.283 0 0 1 .56 0Zm-1.668.911c.4 1.268.257 2.292-.026 3.572a.257.257 0 0 1-.514 0c-.241-1.262-.354-2.312-.023-3.572a.283.283 0 0 1 .563 0Z"/></svg>
+                  </a>
+                  <a href="https://www.facebook.com/modestie0/" class="social__link" target="_blank" rel="noopener" aria-label="Facebook">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                  </a>
+                  <a href="https://instagram.com/theodore_modestie/" class="social__link" target="_blank" rel="noopener" aria-label="Instagram">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                  </a>
+                  <a href="https://open.spotify.com/intl-fr/artist/0OTOVBdbPpo0bKBKWfUXkT" class="social__link" target="_blank" rel="noopener" aria-label="Spotify">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+                  </a>
+                  <a href="https://modestie.bandcamp.com/" class="social__link" target="_blank" rel="noopener" aria-label="Bandcamp">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M0 18.75l7.437-13.5H24l-7.438 13.5z"/></svg>
+                  </a>
+                  <a href="mailto:collectifbraisemoi@gmail.com" class="social__booking">Booking</a>
+                </div>
+              </div>
+              <div class="artiste__bio">
+                <p>Modestie débute derrière les platines avec une expérience marquante au YinYang Festival, sur la Grande Muraille de Chine. De retour en France, il approfondit sa pratique, animé par le besoin de structurer son univers et d’affiner son rapport à la musique électronique.</p>
+                <p>Nourri par les vinyles glanés au fil de ses voyages, il développe une approche singulière, façonnée par un digging constant et une sensibilité pour les textures lumineuses et les atmosphères immersives. Ses sets oscillent entre grooves hypnotiques et sélections introspectives, avec une attention particulière portée à la narration et aux dynamiques.</p>
+                <p>Actif sur la scène parisienne, il devient résident au Garage et se produit dans des lieux emblématiques comme Concrete. Il partage également les platines avec des collectifs underground tels que Péripate, Nipples, Microclimat, La Toilette ou Positive Altitude. C’est dans ce contexte qu’il co-fonde, avec <a href="#panel-subtherapy" data-panel="panel-subtherapy">Sub Therapy</a>, le duo <a href="#panel-content" data-panel="panel-content">C&nbsp;O&nbsp;N&nbsp;T&nbsp;E&nbsp;N&nbsp;T</a>.</p>
+                <p>À partir de 2020, il profite du ralentissement du monde nocturne pour approfondir son exploration des esthétiques électroniques des années 80 et 90, une recherche qui nourrit durablement son identité artistique.</p>
+                <p>Depuis 2021, Modestie développe son travail de production avec plusieurs sorties en ligne, dont l’EP <a href="https://bouncingcells.bandcamp.com/album/bouncing-cells" target="_blank" rel="noopener"><em>Bouncing Cells</em></a> sur le label Hydropathes. En parallèle, il compose pour l’image, collaborant sur des projets audiovisuels et cinématographiques.</p>
+                <p>Parallèlement à ses DJ sets, il accorde une place croissante à l’ambient, qu’il explore à travers des nappes cosmiques et apaisantes, pensées comme des espaces suspendus. Une approche qu’il décline aussi bien en production qu’en performance.</p>
+                <p>Toujours actif entre clubs et festivals, Modestie poursuit une trajectoire à la croisée de la culture club et des explorations atmosphériques.</p>
+              </div>
+              <div class="artiste__tracks">
+                <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" loading="lazy"
+                  src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2198140871&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true"></iframe>
+                <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" loading="lazy"
+                  src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2198149431&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true"></iframe>
+                <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" loading="lazy"
+                  src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A1468041517&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true"></iframe>
+              </div>
+            </div>
+          </div>
+          <div class="artiste__photos">
+            <div class="photo-strip__track">
+              <button class="photo-strip__item" data-src="/images/modestie/modestie-annecy.webp" data-alt="Modestie Annecy">
+                <img src="/images/modestie/modestie-annecy.webp" alt="Modestie Annecy" loading="lazy" />
+              </button>
+              <button class="photo-strip__item" data-src="/images/modestie/modestie-garage-back.webp" data-alt="Modestie Garage">
+                <img src="/images/modestie/modestie-garage-back.webp" alt="Modestie Garage" loading="lazy" />
+              </button>
+              <button class="photo-strip__item" data-src="/images/modestie/modestie-nb-min.webp" data-alt="Modestie">
+                <img src="/images/modestie/modestie-nb-min.webp" alt="Modestie" loading="lazy" />
+              </button>
+              <button class="photo-strip__item" data-src="/images/modestie/modestie-garage.webp" data-alt="Modestie Garage">
+                <img src="/images/modestie/modestie-garage.webp" alt="Modestie Garage" loading="lazy" />
+              </button>
+              <button class="photo-strip__item" data-src="/images/modestie/modestie-nb1-min.webp" data-alt="Modestie Concrete">
+                <img src="/images/modestie/modestie-nb1-min.webp" alt="Modestie Concrete" loading="lazy" />
+              </button>
+              <button class="photo-strip__item photo-strip__item--wide" data-src="/images/modestie/modestie-vryche.webp" data-alt="Modestie Vryche festival">
+                <img src="/images/modestie/modestie-vryche.webp" alt="Modestie Vryche festival" loading="lazy" />
+              </button>
+            </div>
+          </div>
+        </section>
       </div>
     </div>
-  </section>
+
+  </div>
 
   <!-- FOOTER -->
   <footer class="footer">
