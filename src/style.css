@@ -892,12 +892,13 @@ img, video { max-width: 100%; height: auto; display: block; }
   .panel__tab { display: none !important; }
 
   .panel__body {
+    position: relative !important;
     opacity: 1 !important;
     pointer-events: auto !important;
     transition: none !important;
     padding: 0 !important;
   }
-  .panel .artiste { padding: 1.2rem 0 2.5rem; overflow: hidden; }
+  .panel .artiste { padding: 1.2rem 0 4rem; overflow-x: clip; }
 
   .panel .artiste__layout,
   .panel .artiste__watermark,
